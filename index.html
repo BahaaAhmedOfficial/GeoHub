@@ -15,126 +15,368 @@
       <header class="navbar">
         <div class="logo-container">
           <img src="assets/logo.png" alt="GeoHub Logo" class="logo" />
-          <span class="brand-name">GEOHUB</span>
+          <span class="brand-name">GeoHub</span>
         </div>
 
         <nav>
           <ul>
-            <li><a href="#about">ABOUT US</a></li>
-            <li><a href="#team">OUR TEAM</a></li>
-            <li><a href="#partners">PARTNERS</a></li>
+            <li><a href="#articles">Articles</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#team">Core Team</a></li>
+            <li><a href="#partners">Partners</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
       </header>
 
       <div class="hero-content">
-        <h1>Kickstart Your Geology Career</h1>
+        <p class="eyebrow">Student-Led Geology Initiative</p>
+        <h1>
+          GeoHub connects geology students to practical learning and
+          career-ready skills.
+        </h1>
         <p>
-          A scientific initiative designed to simplify science, build your
-          research skills, and bridge the gap between academia and the
-          professional world.
+          Our mission is to simplify geological science, make training
+          accessible, and help students move from classroom concepts to real
+          field impact.
         </p>
         <div class="hero-buttons">
-          <a href="#about" class="btn btn-outline">About Us</a>
+          <a href="#about" class="btn btn-outline">Our Story</a>
           <a href="#join" class="btn btn-solid">Join GeoHub</a>
         </div>
-      </div>
-
-      <div class="social-sidebar">
-        <a href="https://www.facebook.com/profile.php?id=61573120872446"
-          ><i class="fab fa-facebook-f"></i
-        ></a>
-        <a href="https://www.youtube.com/@geohub-t8i"
-          ><i class="fab fa-youtube"></i
-        ></a>
-        <a href="https://www.tiktok.com/@geohubpage?_r=1&_t=ZS-93oJaOiJ4p3"
-          ><i class="fab fa-tiktok"></i
-        ></a>
-        <a href="https://www.instagram.com/geohubpage_"
-          ><i class="fab fa-instagram"></i
-        ></a>
-        <a
-          href="https://www.linkedin.com/company/geohub-page/posts/?feedView=all"
-          ><i class="fab fa-linkedin-in"></i
-        ></a>
       </div>
     </section>
 
     <section id="achievements" class="content-section">
-      <h2>Last Season's Achievements</h2>
-      <div class="stats-grid">
-        <div class="stat-card">
-          <h3>0</h3>
-          <p>Team Members</p>
-        </div>
-        <div class="stat-card">
-          <h3>0</h3>
-          <p>Courses Provided</p>
-        </div>
-        <div class="stat-card">
-          <h3>0</h3>
-          <p>Trainees</p>
-        </div>
-      </div>
+      <h2>Last Season At A Glance</h2>
+      <p class="section-copy">
+        GeoHub delivered focused training, research support, and mentoring
+        activities for geology students across multiple universities.
+      </p>
+      <div id="stats-grid" class="stats-grid"></div>
     </section>
 
-    <section id="about" class="content-section bg-light">
+    <section id="articles" class="content-section bg-light">
+      <div class="section-header">
+        <h2>GeoHub Articles</h2>
+        <p class="section-copy">
+          News, research notes, and educational guides written by the GeoHub
+          community.
+        </p>
+      </div>
+      <div id="articles-list" class="articles-grid"></div>
+      <p id="no-articles" class="muted" hidden>No articles published yet.</p>
+    </section>
+
+    <section id="about" class="content-section">
       <h2>About GeoHub</h2>
-      <p>
-        مبادرة علمية بتجمع طلبة وخريجي قسم الجيولوجيا. بنساعدك تبدأ طريقك
-        المهني، تتعلم البحث العلمي، وتتميز في دراستك من خلال سيشنات، تجارب
-        حقيقية، ومصادر موثوقة. هدفنا تبسيط العلم وربطك بسوق العمل.
+      <p class="section-copy">
+        GeoHub started as a student circle in 2023 after a field trip where
+        members realized that many geology students had strong motivation but
+        limited access to practical guidance. The founders built GeoHub to close
+        that gap through structured training, peer mentoring, and direct
+        exposure to real geological workflows.
       </p>
     </section>
 
     <section id="team" class="content-section bg-light">
-      <h2>GeoHub Core Team</h2>
-
-      <div class="team-grid">
-        <div class="team-card">
-          <img src="assets/member.png" alt="Nour Daklash" />
-          <div class="card-info">
-            <p class="member-name">Mohamed Ahmed</p>
-            <p class="member-role">PR Team Leader</p>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <img src="assets/member.png" alt="Hassan Abdel Qader" />
-          <div class="card-info">
-            <p class="member-name">Hassan Abdel Qader</p>
-            <p class="member-role">HR Hiring Manager</p>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <img src="assets/member.png" alt="Ahmed Nagy" />
-          <div class="card-info">
-            <p class="member-name">Ahmed Nagy</p>
-            <p class="member-role">Vice head OC</p>
-          </div>
-        </div>
-      </div>
+      <h2>Core Team Hierarchy</h2>
+      <div id="team-grid" class="team-grid"></div>
     </section>
 
     <section id="partners" class="content-section">
       <h2>GeoHub Partners</h2>
-      <p></p>
+      <button
+        id="partners-toggle"
+        class="btn btn-outline btn-small"
+        type="button"
+        aria-expanded="false"
+      >
+        Show Previous Partners
+      </button>
+      <ul id="partners-list" class="partners-list" hidden>
+        <li>EarthScan Solutions</li>
+        <li>GeoVision Academy</li>
+        <li>Nile Stratigraphy Center</li>
+        <li>Desert Data Labs</li>
+        <li>PetroCore Training Hub</li>
+      </ul>
     </section>
 
-    <section id="join" class="content-section bg-dark">
-      <h2>Contact & Join Us</h2>
+    <section id="contact" class="content-section bg-dark">
+      <h2>Contact Us</h2>
       <div class="contact-container">
         <div class="contact-info">
-          <h3>Reach Out</h3>
+          <h3>For Inquiries</h3>
           <p><i class="fab fa-whatsapp"></i> WhatsApp: +20 100 862 1697</p>
-          <p>Social Links listed in the menu.</p>
+          <p>
+            <a
+              href="https://www.facebook.com/profile.php?id=61573120872446"
+              target="_blank"
+              rel="noreferrer"
+              >Facebook</a
+            >
+          </p>
+          <p>
+            <a
+              href="https://www.instagram.com/geohubpage_"
+              target="_blank"
+              rel="noreferrer"
+              >Instagram</a
+            >
+          </p>
+          <p>
+            <a
+              href="https://www.linkedin.com/company/geohub-page/posts/?feedView=all"
+              target="_blank"
+              rel="noreferrer"
+              >LinkedIn</a
+            >
+          </p>
+          <p>
+            <a
+              href="https://www.youtube.com/@geohub-t8i"
+              target="_blank"
+              rel="noreferrer"
+              >YouTube</a
+            >
+          </p>
+          <p>
+            <a
+              href="https://www.tiktok.com/@geohubpage?_r=1&_t=ZS-93oJaOiJ4p3"
+              target="_blank"
+              rel="noreferrer"
+              >TikTok</a
+            >
+          </p>
         </div>
-        <div class="join-form">
-          <h3>Join GeoHub</h3>
-          <a href="YOUR_GOOGLE_FORM_LINK" target="_blank" class="btn btn-solid"
-            >Fill out the Google Form</a
+        <div id="join" class="join-form">
+          <h3>Join Us</h3>
+          <p class="muted-light">
+            Complete the form and the HR team will reach out.
+          </p>
+          <a
+            href="https://forms.gle/example"
+            target="_blank"
+            rel="noreferrer"
+            class="btn btn-solid"
+            >Open Join Form</a
           >
+        </div>
+      </div>
+    </section>
+
+    <section id="admin" class="content-section">
+      <h2>Administrator Portal</h2>
+      <p class="section-copy">
+        Login with an email address and password. Main administrators can add or
+        edit other administrators and assign restricted site permissions.
+      </p>
+
+      <form id="admin-login" class="admin-login" autocomplete="off">
+        <label>
+          Email
+          <input type="email" id="admin-email" required />
+        </label>
+        <label>
+          Password
+          <input type="password" id="admin-password" required />
+        </label>
+        <button class="btn btn-solid" type="submit">Login</button>
+        <p id="login-message" class="muted"></p>
+      </form>
+
+      <div id="admin-panel" class="admin-panel" hidden>
+        <div class="admin-head">
+          <div>
+            <h3>Administrator Dashboard</h3>
+            <p id="admin-session-summary" class="muted"></p>
+          </div>
+          <button
+            id="logout-admin"
+            class="btn btn-outline btn-small"
+            type="button"
+          >
+            Logout
+          </button>
+        </div>
+        <div id="admin-permissions" class="permission-badges"></div>
+
+        <div class="admin-dashboard">
+          <section id="admin-admins-section" class="admin-card" hidden>
+            <div class="section-header">
+              <div>
+                <h3>Manage Administrators</h3>
+                <p class="section-copy">
+                  Only the two main administrators can create or edit other
+                  administrators.
+                </p>
+              </div>
+            </div>
+            <form id="admin-form" class="admin-form" autocomplete="off">
+              <input type="hidden" id="admin-record-id" />
+              <label>
+                Full Name
+                <input type="text" id="admin-name" required />
+              </label>
+              <label>
+                Email
+                <input type="email" id="admin-email-input" required />
+              </label>
+              <label>
+                Password
+                <input type="password" id="admin-new-password" />
+              </label>
+              <div class="permission-grid" id="permission-grid">
+                <label
+                  ><input type="checkbox" id="perm-articles" /> Articles</label
+                >
+                <label
+                  ><input type="checkbox" id="perm-stats" /> Statistics</label
+                >
+                <label
+                  ><input type="checkbox" id="perm-team" /> Team
+                  hierarchy</label
+                >
+                <label
+                  ><input type="checkbox" id="perm-partners" /> Partners</label
+                >
+              </div>
+              <div class="form-actions">
+                <button class="btn btn-solid" type="submit">
+                  Save Administrator
+                </button>
+                <button
+                  id="reset-admin-form"
+                  class="btn btn-outline"
+                  type="button"
+                >
+                  Clear
+                </button>
+              </div>
+              <p id="admin-form-message" class="muted"></p>
+            </form>
+            <h3>Current Administrators</h3>
+            <ul id="admin-list" class="admin-list"></ul>
+          </section>
+
+          <section id="admin-articles-section" class="admin-card" hidden>
+            <div class="section-header">
+              <div>
+                <h3>Manage Articles</h3>
+                <p class="section-copy">
+                  Add, edit, and remove published articles.
+                </p>
+              </div>
+            </div>
+            <form id="article-form" class="editor-form" autocomplete="off">
+              <input type="hidden" id="article-id" />
+              <label>
+                Title
+                <input type="text" id="article-title" required />
+              </label>
+              <label>
+                Author
+                <input type="text" id="article-author" required />
+              </label>
+              <label>
+                Summary
+                <textarea id="article-summary" rows="3" required></textarea>
+              </label>
+              <label>
+                Full Article Content
+                <textarea id="article-content" rows="8" required></textarea>
+              </label>
+              <div class="form-actions">
+                <button class="btn btn-solid" type="submit">
+                  Save Article
+                </button>
+                <button id="reset-form" class="btn btn-outline" type="button">
+                  Clear
+                </button>
+              </div>
+            </form>
+            <h3>Current Articles</h3>
+            <ul id="admin-article-list" class="admin-list"></ul>
+          </section>
+
+          <section id="admin-stats-section" class="admin-card" hidden>
+            <div class="section-header">
+              <div>
+                <h3>Update Statistics</h3>
+                <p class="section-copy">
+                  Edit the headline numbers shown near the top of the page.
+                </p>
+              </div>
+            </div>
+            <form id="stats-form" class="editor-form" autocomplete="off">
+              <label>
+                Students Enrolled
+                <input type="text" id="stat-students" required />
+              </label>
+              <label>
+                Courses Provided
+                <input type="text" id="stat-courses" required />
+              </label>
+              <label>
+                Trainees Completed Tracks
+                <input type="text" id="stat-trainees" required />
+              </label>
+              <label>
+                Events, Labs, And Workshops
+                <input type="text" id="stat-events" required />
+              </label>
+              <div class="form-actions">
+                <button class="btn btn-solid" type="submit">
+                  Save Statistics
+                </button>
+              </div>
+              <p id="stats-form-message" class="muted"></p>
+            </form>
+          </section>
+
+          <section id="admin-team-section" class="admin-card" hidden>
+            <div class="section-header">
+              <div>
+                <h3>Update Team Hierarchy</h3>
+                <p class="section-copy">
+                  Update the six fixed core roles, their names, and their
+                  pictures. Only the two main administrators can edit this
+                  section.
+                </p>
+              </div>
+            </div>
+            <form id="team-form" class="editor-form" autocomplete="off">
+              <div id="team-editor-list" class="editor-list"></div>
+              <div class="form-actions">
+                <button class="btn btn-solid" type="submit">Save Team</button>
+              </div>
+              <p id="team-form-message" class="muted"></p>
+            </form>
+          </section>
+
+          <section id="admin-partners-section" class="admin-card" hidden>
+            <div class="section-header">
+              <div>
+                <h3>Update Partners</h3>
+                <p class="section-copy">
+                  Edit the partner names shown on the public site.
+                </p>
+              </div>
+            </div>
+            <form id="partners-form" class="editor-form" autocomplete="off">
+              <div id="partners-editor-list" class="editor-list"></div>
+              <div class="form-actions">
+                <button id="add-partner" class="btn btn-outline" type="button">
+                  Add Partner
+                </button>
+                <button class="btn btn-solid" type="submit">
+                  Save Partners
+                </button>
+              </div>
+              <p id="partners-form-message" class="muted"></p>
+            </form>
+          </section>
         </div>
       </div>
     </section>

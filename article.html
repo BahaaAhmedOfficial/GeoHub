@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GeoHub Article</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="article-page">
+      <a href="index.html#articles" class="btn btn-outline btn-small"
+        >Back To Articles</a
+      >
+      <article id="article-view" class="article-view" hidden>
+        <p id="article-date" class="article-meta"></p>
+        <h1 id="article-title"></h1>
+        <p id="article-author" class="article-meta"></p>
+        <p id="article-summary" class="article-summary"></p>
+        <div id="article-content" class="article-content"></div>
+      </article>
+      <section id="article-missing" class="article-missing" hidden>
+        <h1>Article Not Found</h1>
+        <p>The article link may be invalid or the article was removed.</p>
+      </section>
+    </main>
+
+    <script src="article.js"></script>
+  </body>
+</html>

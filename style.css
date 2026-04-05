@@ -1,19 +1,18 @@
-/* --- GEOHUB COLOR PALETTE --- */
 :root {
-  --geo-brown: #8e633b; /* Primary text banner background from logo */
-  --geo-brown-dark: #664629; /* Darker brown for hover states */
-  --geo-green: #85c341; /* Globe green */
-  --geo-tan: #d2a77a; /* Desert sand */
-  --text-light: #ffffff;
-  --dark-overlay: rgba(30, 30, 30, 0.75);
+  --geo-sand: #efe0cf;
+  --geo-brown: #71492c;
+  --geo-brown-dark: #50331f;
+  --geo-clay: #bf7d49;
+  --geo-ink: #1f1712;
+  --geo-stone: #f7f3ef;
+  --geo-white: #fff;
+  --geo-shadow: 0 12px 35px rgba(38, 23, 13, 0.1);
 }
 
-/* --- BASE STYLES --- */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 html {
@@ -21,366 +20,623 @@ html {
 }
 
 body {
-  background-color: #f9f9f9;
-  color: #333;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--geo-ink);
+  background: radial-gradient(circle at 10% 10%, #fff, var(--geo-sand));
+  line-height: 1.6;
 }
 
-/* --- HERO SECTION --- */
 .hero {
-  height: 100vh;
-  /* Add a background image to your assets folder to complete this look */
+  min-height: 92vh;
   background:
-    linear-gradient(var(--dark-overlay), var(--dark-overlay)),
+    linear-gradient(125deg, rgba(18, 13, 9, 0.84), rgba(42, 27, 17, 0.68)),
     url("assets/hero-bg.jpg") center/cover no-repeat;
-  background-color: #2c2c2c; /* Fallback color */
+  color: var(--geo-white);
   position: relative;
   display: flex;
   align-items: center;
-  padding: 0 10%;
+  padding: 8.5rem 8% 5rem;
 }
 
-/* --- NAVBAR --- */
 .navbar {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
+  padding: 1.4rem 8%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 30px 5%;
-  z-index: 100;
+  justify-content: space-between;
+  backdrop-filter: blur(4px);
 }
 
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 15px;
-  color: var(--text-light);
+  gap: 0.7rem;
 }
 
 .logo {
-  height: 50px;
-  width: auto;
+  width: 2.8rem;
+  height: 2.8rem;
+  object-fit: contain;
 }
 
 .brand-name {
-  font-size: 1.6rem;
-  font-weight: 600;
-  letter-spacing: 2px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
 nav ul {
-  display: flex;
   list-style: none;
-  gap: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 nav a {
+  color: var(--geo-white);
   text-decoration: none;
-  color: var(--text-light);
-  font-weight: 600;
   font-size: 0.85rem;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-bottom: 0.1rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease;
 }
 
 nav a:hover {
-  color: var(--geo-brown); /* Replaces the pink hover from the reference */
+  border-color: var(--geo-clay);
 }
 
-.search-icon i {
-  color: var(--text-light);
-  font-size: 1.3rem;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.search-icon i:hover {
-  color: var(--geo-brown);
-}
-
-/* --- HERO CONTENT --- */
 .hero-content {
-  max-width: 650px;
-  color: var(--text-light);
-  z-index: 10;
+  max-width: 52rem;
+}
+
+.eyebrow {
+  font-size: 0.86rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.9rem;
+  color: #f8d6b8;
 }
 
 .hero-content h1 {
-  font-size: 3.5rem;
-  font-weight: 400;
-  margin-bottom: 20px;
-  line-height: 1.1;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.15;
+  margin-bottom: 1rem;
 }
 
 .hero-content p {
-  font-size: 1.4rem;
-  font-style: italic;
-  margin-bottom: 40px;
-  font-weight: 300;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-bottom: 1.4rem;
+  max-width: 43rem;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 20px;
+  gap: 0.8rem;
+  flex-wrap: wrap;
 }
 
 .btn {
-  display: inline-block; /* This fixes the overlap */
-  margin-top: 15px; /* Adds breathing room above the button */
-  padding: 12px 35px;
-  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  transition: all 0.3s ease;
+  border: 1px solid transparent;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-.contact-info h3,
-.join-form h3 {
-  margin-bottom: 15px;
-}
-
-.btn-outline {
-  border: 1px solid var(--text-light);
-  color: var(--text-light);
-  background: transparent;
-}
-
-.btn-outline:hover {
-  background: var(--text-light);
-  color: var(--geo-brown-dark);
+.btn:hover {
+  transform: translateY(-1px);
 }
 
 .btn-solid {
   background: var(--geo-brown);
-  color: var(--text-light);
-  border: none;
+  color: var(--geo-white);
 }
 
 .btn-solid:hover {
   background: var(--geo-brown-dark);
 }
 
-/* --- SOCIAL SIDEBAR --- */
-.social-sidebar {
-  position: absolute;
-  right: 5%;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  z-index: 10;
+.btn-outline {
+  border-color: currentColor;
+  color: inherit;
+  background: transparent;
 }
 
-.social-sidebar a {
-  color: var(--text-light);
-  font-size: 1.2rem;
-  text-align: center;
-  transition: color 0.3s ease;
+.btn-small {
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
 }
 
-.social-sidebar a:hover {
-  color: var(--geo-brown);
-}
-
-/* --- CONTENT SECTIONS SKELETON --- */
 .content-section {
-  padding: 80px 10%;
-  text-align: center;
+  padding: 4.6rem 8%;
+}
+
+.content-section h2 {
+  font-size: clamp(1.5rem, 3.3vw, 2.15rem);
+  margin-bottom: 0.8rem;
+}
+
+.section-copy {
+  max-width: 48rem;
+  color: #503f34;
+  margin-bottom: 1.4rem;
 }
 
 .bg-light {
-  background-color: #fff;
+  background: var(--geo-stone);
 }
+
 .bg-dark {
-  background-color: #222;
-  color: #fff;
+  background: #2b2018;
+  color: var(--geo-white);
+}
+
+.stats-grid,
+.articles-grid,
+.team-grid {
+  display: grid;
+  gap: 1rem;
 }
 
 .stats-grid {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 }
 
 .stat-card {
-  background: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  min-width: 200px;
+  background: var(--geo-white);
+  border-radius: 14px;
+  box-shadow: var(--geo-shadow);
+  padding: 1.2rem;
 }
 
 .stat-card h3 {
-  font-size: 2.5rem;
   color: var(--geo-brown);
+  font-size: 2rem;
 }
 
-.contact-container {
+.articles-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.article-card {
   display: flex;
-  justify-content: space-around;
-  margin-top: 40px;
-  text-align: left;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem;
+  border-radius: 14px;
+  background: var(--geo-white);
+  box-shadow: var(--geo-shadow);
 }
 
-/* --- OUR TEAM SECTION (Right-Sized cards) --- */
+.article-card h3 {
+  font-size: 1.1rem;
+}
+
+.article-meta {
+  font-size: 0.83rem;
+  color: #775d4b;
+}
+
+.read-more {
+  width: fit-content;
+  color: var(--geo-brown-dark);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid var(--geo-brown-dark);
+}
+
 .team-grid {
-  display: grid;
-  /* Lower the minmax to make cards scale down */
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 25px; /* Slightly tighter gap */
-  margin-top: 50px;
-  padding: 0 5%;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .team-card {
-  background-color: #ffffff;
-  /* top/sides, bottom padding */
-  padding: 10px 10px 20px 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  border-radius: 4px;
+  background: var(--geo-white);
+  border-radius: 12px;
+  box-shadow: var(--geo-shadow);
+  padding: 1rem;
+  display: grid;
+  gap: 0.7rem;
+  justify-items: center;
   text-align: center;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-
-  max-width: 150px;
-  height: auto; /* <-- This lets the white card expand to fit the text */
-  margin: 0 auto;
 }
 
-/* Adds a slight lift effect when you hover over a card */
-.team-card:hover {
-  transform: translateY(-3px); /* Subtle lift */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+.team-card-lead {
+  grid-column: span 2;
 }
 
-.team-card img {
-  /* Scale the image significantly within the card */
+.team-avatar {
   width: 100%;
   aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 2px;
-  margin-bottom: 10px; /* Reduced margin */
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f5e8dc, #ead2bd);
+  display: grid;
+  place-items: center;
 }
 
-.member-name {
-  font-weight: 700;
-  font-size: 0.9rem; /* Smaller font for a smaller card */
-  color: #333;
-  margin-bottom: 3px;
-}
-
-.member-role {
-  font-weight: 400;
-  font-size: 0.8rem; /* Smaller font for a smaller card */
-  color: #666;
-  text-transform: capitalize;
-}
-/* Adds a slight lift effect when you hover over a card */
-.team-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-}
-
-.team-card img {
+.team-avatar img {
   width: 100%;
-  aspect-ratio: 1 / 1; /* Forces the image into a perfect square */
-  object-fit: cover; /* Ensures the image fills the square without stretching */
-  border-radius: 2px;
-  margin-bottom: 15px;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.member-name {
-  font-weight: 700; /* Bold */
-  font-size: 1.1rem;
-  color: #333;
-  margin-bottom: 5px;
+.team-avatar-empty {
+  color: #7b654f;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.editor-row-team {
+  grid-template-columns: minmax(120px, 180px) minmax(120px, 180px) minmax(
+      180px,
+      1fr
+    ) minmax(200px, 1.4fr) auto;
+  align-items: center;
+}
+
+.editor-static-value {
+  display: inline-flex;
+  min-height: 2.35rem;
+  align-items: center;
+  padding: 0.55rem 0.6rem;
+  border: 1px solid #d4c2b2;
+  border-radius: 8px;
+  background: #fdf9f5;
+  font-weight: 600;
+}
+
+.team-preview {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #efe0cf;
+  box-shadow: inset 0 0 0 1px rgba(80, 51, 31, 0.08);
+}
+
+.team-preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .member-role {
-  font-weight: 400; /* Normal */
-  font-size: 0.95rem;
-  color: #666;
-  text-transform: capitalize;
+  color: #7b654f;
+  font-size: 0.84rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
-/* =========================================
-   RESPONSIVE DESIGN (Tablets & Phones)
-   ========================================= */
-@media (max-width: 768px) {
-  /* Reduce overall page padding so content isn't squeezed */
+.member-name {
+  font-size: 1.06rem;
+  font-weight: 700;
+  margin-top: 0.2rem;
+}
+
+.partners-list {
+  margin-top: 1rem;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.6rem;
+}
+
+.partners-list li {
+  background: var(--geo-white);
+  border-left: 4px solid var(--geo-clay);
+  border-radius: 10px;
+  padding: 0.75rem;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.contact-container a {
+  color: #ffe1c5;
+}
+
+.join-form,
+.contact-info {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.admin-login,
+.editor-form {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.admin-login {
+  max-width: 420px;
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 600;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid #d4c2b2;
+  border-radius: 8px;
+  padding: 0.6rem;
+  font: inherit;
+}
+
+.admin-panel {
+  margin-top: 1.5rem;
+  border: 1px solid #e2d4c8;
+  border-radius: 12px;
+  padding: 1rem;
+  background: var(--geo-white);
+}
+
+.admin-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.permission-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.permission-badges-inline {
+  margin-top: 0.6rem;
+  margin-bottom: 0;
+}
+
+.permission-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  background: #f2e2d4;
+  color: var(--geo-brown-dark);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.permission-badge-main {
+  background: #2b2018;
+  color: var(--geo-white);
+}
+
+.admin-dashboard {
+  display: grid;
+  gap: 1rem;
+}
+
+.admin-card {
+  border: 1px solid #e4d7cc;
+  border-radius: 12px;
+  padding: 1rem;
+  background: #fffdfb;
+}
+
+.section-header {
+  margin-bottom: 0.9rem;
+}
+
+.admin-form {
+  display: grid;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.permission-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.6rem;
+}
+
+.permission-grid label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.admin-list,
+.editor-list {
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.admin-list {
+  margin-top: 0.8rem;
+}
+
+.admin-list-item {
+  border: 1px solid #e4d7cc;
+  border-radius: 10px;
+  padding: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.admin-list-item-stack {
+  align-items: flex-start;
+}
+
+.editor-form {
+  margin-bottom: 1rem;
+}
+
+.editor-list {
+  margin-bottom: 0.8rem;
+}
+
+.editor-row {
+  border: 1px solid #e4d7cc;
+  border-radius: 10px;
+  padding: 0.8rem;
+  display: grid;
+  gap: 0.8rem;
+  background: #fff;
+}
+
+.editor-row-two-col {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) auto;
+  align-items: end;
+}
+
+.editor-row-actions {
+  display: flex;
+  align-items: end;
+  gap: 0.45rem;
+  justify-content: flex-end;
+}
+
+.editor-row label {
+  font-weight: 600;
+}
+
+.editor-row label input {
+  margin-top: 0.35rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.muted {
+  color: #6f5948;
+}
+
+.muted-light {
+  color: #f5dac4;
+  margin-bottom: 0.7rem;
+}
+
+.article-page {
+  max-width: 860px;
+  margin: 3rem auto;
+  padding: 0 5%;
+}
+
+.article-view {
+  margin-top: 1rem;
+  background: var(--geo-white);
+  border-radius: 14px;
+  box-shadow: var(--geo-shadow);
+  padding: 1.2rem;
+}
+
+.article-view h1 {
+  margin-bottom: 0.7rem;
+}
+
+.article-summary {
+  margin: 1rem 0;
+  font-size: 1.05rem;
+  color: #5a4638;
+}
+
+.article-content {
+  white-space: pre-wrap;
+}
+
+.article-missing {
+  margin-top: 1rem;
+  background: var(--geo-white);
+  border-radius: 12px;
+  box-shadow: var(--geo-shadow);
+  padding: 1rem;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+    padding-top: 1rem;
+  }
+
+  .hero {
+    padding-top: 9.8rem;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .team-card-lead {
+    grid-column: span 1;
+  }
+
+  .editor-row-team {
+    grid-template-columns: 72px 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .content-section,
   .hero,
-  .content-section {
+  .navbar {
     padding-left: 5%;
     padding-right: 5%;
   }
 
-  /* Make the Navbar stack vertically */
-  .navbar {
+  .admin-head {
     flex-direction: column;
-    gap: 20px;
-    padding-top: 20px;
+    align-items: flex-start;
   }
 
-  /* Shrink Hero Text */
-  .hero-content h1 {
-    font-size: 2.2rem;
-    margin-top: 80px; /* Pushes text down below the stacked navbar */
-  }
-
-  .hero-content p {
-    font-size: 1.1rem;
-    margin-bottom: 25px;
-  }
-
-  /* Stack Hero Buttons */
-  .hero-buttons {
+  .admin-list-item {
     flex-direction: column;
-    gap: 15px;
+    align-items: flex-start;
   }
 
-  .btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  /* Move the Social Sidebar from the right edge to the bottom middle */
-  .social-sidebar {
-    top: auto;
-    bottom: 30px;
-    right: 50%;
-    transform: translateX(50%);
-    flex-direction: row;
-    gap: 20px;
-  }
-
-  /* Stack the Achievement Stats */
-  .stats-grid {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .stat-card {
-    width: 100%;
-    max-width: 300px; /* Keeps cards from stretching too wide on phones */
-  }
-
-  /* Stack the Contact Form and Info */
-  .contact-container {
-    flex-direction: column;
-    gap: 40px;
-    text-align: center;
-  }
-
-  /* Team Grid is already using auto-fit, but let's tighten the gap for mobile */
   .team-grid {
-    gap: 15px;
+    grid-template-columns: 1fr;
+  }
+
+  .team-card-lead {
+    grid-column: span 1;
+  }
+
+  .editor-row-team {
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+  }
+
+  .editor-row-actions {
+    justify-content: flex-start;
   }
 }
